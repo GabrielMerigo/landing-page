@@ -15,12 +15,12 @@ import Footer from 'components/Footer'
 import JsonSchema from 'components/JsonSchema'
 
 import client from 'graphql/client'
-import GET_LOGO from 'graphql/queries/getLadingPage'
+import GET_LADING_PAGE from 'graphql/queries/getLadingPage'
 import { LadingPageProps } from 'types/api'
 
-const Index = ({ logo }: LadingPageProps) => (
+const Index = ({ logo, SectionHeader }: LadingPageProps) => (
   <>
-    <SectionHero logo={logo} />
+    <SectionHero logo={logo} SectionHeader={SectionHeader} />
     <SectionAboutProject />
     <SectionTech />
     <SectionConcepts />
@@ -33,12 +33,10 @@ const Index = ({ logo }: LadingPageProps) => (
     <Footer />
     <JsonSchema />
   </>
-)
+);
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { ladingPage } = await client.request(GET_LOGO);
-
-  console.log(ladingPage.data.attributes)
+  const { ladingPage } = await client.request(GET_LADING_PAGE);
 
   return {
     props: {

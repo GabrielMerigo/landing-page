@@ -4,6 +4,7 @@ import Heading from 'components/Heading'
 import Container from 'components/Container'
 
 import * as S from './styles'
+import { HeaderProps } from 'types/api'
 
 const SectionAboutProject = () => (
   <S.Wrapper>

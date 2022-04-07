@@ -119,6 +119,24 @@ export type AboutUsProps = {
   }
 }
 
+interface Interview {
+  name: string
+  description: string
+  photo: {
+    data: {
+      attributes: {
+        url: string
+        alternativeText: string
+      }
+    }
+  }
+}
+
+export type SectionReviewProps = {
+  title: string
+  reviews: Interview[]
+}
+
 export type LadingPageProps = {
   logo: LogoProps,
   SectionHeader: HeaderProps,
@@ -129,4 +147,5 @@ export type LadingPageProps = {
   SectionAgenda: SectionAgendaProps,
   SectionPrincingBox: SectionPrincingBoxProps
   AboutUs: AboutUsProps
+  SectionReview: SectionReviewProps
 }

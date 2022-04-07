@@ -4,45 +4,34 @@ import Heading from 'components/Heading'
 import Container from 'components/Container'
 
 import * as S from './styles'
-import { HeaderProps } from 'types/api'
+import { SectionAboutProps } from 'types/api'
+import { getImageUrl } from 'utils/getImageUrl'
 
-const SectionAboutProject = () => (
+type Props = {
+  SectionProject: SectionAboutProps
+}
+
+const SectionAboutProject = ({ SectionProject }: Props) => (
   <S.Wrapper>
     <Container>
       <S.Container>
         <S.Image>
           <source
-            srcSet={require('@images/project.png?webp')}
+            srcSet={getImageUrl(SectionProject.photo.data.attributes.url)}
             type="image/webp"
           />
-          <source srcSet={require('@images/project.png')} type="image/png" />
+          <source srcSet={getImageUrl(SectionProject.photo.data.attributes.url)} type="image/png" />
           <img
-            src={require('@images/project.png')}
+            src={getImageUrl(SectionProject.photo.data.attributes.url)}
             loading="lazy"
-            alt="Tela do ecommerce com uma imagem do CMS por trás"
+            alt={SectionProject.photo.data.attributes.alternativeText}
           />
         </S.Image>
         <div>
-          <Heading>O que iremos construir</Heading>
+          <Heading>{SectionProject.title}</Heading>
           <S.Text>
             <p>
-              Iremos criar um e-commerce de jogos, incluindo toda a parte de
-              pagamentos e área do cliente. Os clientes poderão fazer buscas,
-              filtrar, adicionar ao carrinho e comprar seus jogos favoritos.
-            </p>
-
-            <p>
-              Teremos também um <strong>CMS completamente customizado</strong>{' '}
-              para que os administradores possam adicionar produtos, categorias,
-              plataformas, criar promoções, editar partes do site, além de
-              emails automatizados para às vendas de cada produto.
-            </p>
-
-            <p>
-              Para criar tudo isso, iremos utilizar ferramentas muito famosas no
-              mercado de trabalho, como ReactJS, Next, Apollo e outras coisas
-              mais. Sempre prezando pela qualidade do código, ou seja, teremos{' '}
-              <strong>testes em tudo!</strong>
+              {SectionProject.description}
             </p>
           </S.Text>
         </div>

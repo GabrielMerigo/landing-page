@@ -7,7 +7,7 @@ export type LogoProps = {
   }
 }
 
-export type HeaderProps ={
+export type HeaderProps = {
   title: string
   description: string
   button: {
@@ -25,22 +25,38 @@ export type HeaderProps ={
 }
 
 export type SectionAboutProps = {
-  SectionAboutProject:  {
-    photo:  {
-      data:  {
-        attributes:  {
-          alternativeText: string
-          url: string
-        }
+  photo: {
+    data: {
+      attributes: {
+        alternativeText: string
+        url: string
       }
     }
-    title: string
-    description: string
   }
+  title: string
+  description: string
+}
+
+interface Tech {
+  title: string
+  icon: {
+    data: {
+      attributes: {
+        url: string
+        alternativeText: string
+      }
+    }
+  }
+}
+
+export type SectionTechProps = {
+  title: string
+  tecnologies: Tech[]
 }
 
 export type LadingPageProps = {
   logo: LogoProps,
   SectionHeader: HeaderProps,
-  SectionAboutProject: SectionAboutProps
+  SectionAboutProject: SectionAboutProps,
+  SectionTech: SectionTechProps
 }

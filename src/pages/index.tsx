@@ -18,11 +18,16 @@ import client from 'graphql/client'
 import GET_LADING_PAGE from 'graphql/queries/getLadingPage'
 import { LadingPageProps } from 'types/api'
 
-const Index = ({ logo, SectionHeader }: LadingPageProps) => (
+const Index = ({
+  logo,
+  SectionHeader,
+  SectionAboutProject: SectionProject,
+  SectionTech: SectionTecnologies,
+}: LadingPageProps) => (
   <>
     <SectionHero logo={logo} SectionHeader={SectionHeader} />
-    <SectionAboutProject />
-    <SectionTech />
+    <SectionAboutProject SectionProject={SectionProject} />
+    <SectionTech SectionTecnologies={SectionTecnologies}  />
     <SectionConcepts />
     <SectionModules />
     <SectionAgenda />

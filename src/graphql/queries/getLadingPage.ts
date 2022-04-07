@@ -1,5 +1,4 @@
 const GET_LADING_PAGE = /* GraphQL */ `
-
 fragment logo on LadingPage {
   logo {
     data {
@@ -45,6 +44,23 @@ fragment aboutProject on LadingPage {
   }
 }
 
+fragment tecnologies on LadingPage {
+  SectionTech {
+    title
+    tecnologies {
+      title
+      icon {
+        data {
+          attributes {
+            url
+            alternativeText
+          }
+        }
+      }
+    }
+  }
+}
+
 query GET_LADING_PAGE {
   ladingPage {
     data {
@@ -52,10 +68,12 @@ query GET_LADING_PAGE {
         ...header
         ...logo
         ...aboutProject
+        ...tecnologies
       }
     }
   }
 }
-`
+
+`;
 
 export default GET_LADING_PAGE;

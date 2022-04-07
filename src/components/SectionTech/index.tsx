@@ -12,10 +12,6 @@ type Props = {
 }
 
 const SectionTech = ({ SectionTecnologies }: Props) => {
-  SectionTecnologies.tecnologies.map(({ title, icon }) => {
-    console.log(title)
-  })
-
   return (
     <S.Wrapper>
       <Container>

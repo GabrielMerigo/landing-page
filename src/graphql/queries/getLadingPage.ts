@@ -61,6 +61,91 @@ fragment tecnologies on LadingPage {
   }
 }
 
+fragment concepts on LadingPage {
+  SectionConcepts {
+    concepts {
+      concept
+    }
+    title
+  }
+}
+
+fragment modules on LadingPage {
+  SectionModules {
+    title
+    modules {
+      title
+      subtitle
+      description
+    }
+  }
+}
+
+fragment agenda on LadingPage {
+  SectionAgenda {
+    title
+    description
+  }
+}
+
+fragment princingBox on LadingPage {
+  SectionPrincingBox {
+    totalPrice
+    installments
+    priceInstallment
+    description
+    button {
+      label
+      url
+    }
+  }
+}
+
+fragment aboutUs on LadingPage {
+  AboutUs {
+    title
+    authors {
+      data {
+        attributes {
+          name
+          rule
+          description
+          links {
+            url
+            label
+          }
+          photo {
+            data {
+              attributes {
+                alternativeText
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment reviews on LadingPage {
+  SectionReview {
+    title
+    reviews {
+      name
+      description
+      photo {
+        data {
+          attributes {
+            url
+            alternativeText
+          }
+        }
+      }
+    }
+  }
+}
+
 query GET_LADING_PAGE {
   ladingPage {
     data {
@@ -69,11 +154,16 @@ query GET_LADING_PAGE {
         ...logo
         ...aboutProject
         ...tecnologies
+        ...concepts
+        ...modules
+        ...agenda
+        ...princingBox
+        ...aboutUs
+        ...reviews
       }
     }
   }
 }
-
 `;
 
 export default GET_LADING_PAGE;

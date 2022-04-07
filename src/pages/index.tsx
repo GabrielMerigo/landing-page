@@ -23,16 +23,21 @@ const Index = ({
   SectionHeader,
   SectionAboutProject: SectionProject,
   SectionTech: SectionTecnologies,
+  SectionConcepts: SectionConception,
+  SectionModules: Modules,
+  SectionAgenda: Agenda,
+  SectionPrincingBox,
+  AboutUs
 }: LadingPageProps) => (
   <>
     <SectionHero logo={logo} SectionHeader={SectionHeader} />
     <SectionAboutProject SectionProject={SectionProject} />
     <SectionTech SectionTecnologies={SectionTecnologies}  />
-    <SectionConcepts />
-    <SectionModules />
-    <SectionAgenda />
-    <PricingBox />
-    <SectionAboutUs />
+    <SectionConcepts SectionConception={SectionConception} />
+    <SectionModules Modules={Modules} />
+    <SectionAgenda Agenda={Agenda} />
+    <PricingBox SectionPrincingBox={SectionPrincingBox} />
+    <SectionAboutUs AboutUs={AboutUs} />
     <SectionReviews />
     <SectionFaq />
     <Footer />

@@ -137,6 +137,17 @@ export type SectionReviewProps = {
   reviews: Interview[]
 }
 
+export type SectionFAQ = {
+  questions: Array<{
+    question: string
+    answer: string
+  }>
+}
+
+export type FooterProps = {
+  description: string
+}
+
 export type LadingPageProps = {
   logo: LogoProps,
   SectionHeader: HeaderProps,
@@ -148,4 +159,6 @@ export type LadingPageProps = {
   SectionPrincingBox: SectionPrincingBoxProps
   AboutUs: AboutUsProps
   SectionReview: SectionReviewProps
+  SectionFAQ: SectionFAQ,
+  footer: FooterProps
 }

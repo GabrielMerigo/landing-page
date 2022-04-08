@@ -146,6 +146,21 @@ fragment reviews on LadingPage {
   }
 }
 
+fragment faq on LadingPage {
+  SectionFAQ {
+    questions {
+      question
+      answer
+    }
+  }
+}
+
+fragment footer on LadingPage{
+  footer {
+  	description
+	}
+}
+
 query GET_LADING_PAGE {
   ladingPage {
     data {
@@ -160,10 +175,13 @@ query GET_LADING_PAGE {
         ...princingBox
         ...aboutUs
         ...reviews
+        ...faq
+        ...footer
       }
     }
   }
 }
+
 `;
 
 export default GET_LADING_PAGE;

@@ -3,17 +3,21 @@ import React from 'react'
 import Container from 'components/Container'
 import Heading from 'components/Heading'
 
-import faq from './content'
 import * as S from './styles'
+import { SectionFAQ } from 'types/api'
 
-const SectionFaq = () => (
+type Props = {
+  FAQ: SectionFAQ
+}
+
+const SectionFaq = ({ FAQ }: Props) => (
   <S.Wrapper>
     <S.Content>
       <Container>
         <Heading>FAQ</Heading>
 
         <S.Questions>
-          {faq.map(({ question, answer }, index) => (
+          {FAQ.questions.map(({ question, answer }, index) => (
             <S.Question key={index}>
               <Heading lineBottom>{question}</Heading>
               <div dangerouslySetInnerHTML={{ __html: answer }} />

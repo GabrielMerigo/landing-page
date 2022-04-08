@@ -9,33 +9,37 @@ import { SectionPrincingBoxProps } from 'types/api'
 const onClick = () =>
   gaEvent({ action: 'click', category: 'buy', label: 'pricing box button' })
 
-type Props = {
-  SectionPrincingBox: SectionPrincingBoxProps
-}
-
-const PricingBox = ({ SectionPrincingBox }: Props) => (
+const PricingBox = ({ 
+  totalPrice, 
+  installments, 
+  priceInstallment,
+  description,
+  button
+}: SectionPrincingBoxProps) => (
   <S.Box>
     <S.Prices>
       <S.FullPrice>
-        De <span>R${SectionPrincingBox.totalPrice}</span> por apenas
+        De <span>R${totalPrice}</span> por apenas
       </S.FullPrice>
       <S.DiscountPrice>
-        <span>{SectionPrincingBox.installments}x de</span> 
-        R${SectionPrincingBox.priceInstallment}
+        <span>{installments}x de</span> 
+        R${priceInstallment}
       </S.DiscountPrice>
     </S.Prices>
-    <S.BenefitsList>
-      <S.BenefitsItem>
-        {SectionPrincingBox.description}
-      </S.BenefitsItem>
-    </S.BenefitsList>
+    <S.BenefitsList dangerouslySetInnerHTML={{ __html: description }} />
 
     <Button
-      href={SectionPrincingBox.button.url}
+      href={button.url}
       onClick={onClick}
       withPrice
     >
-      <p>{SectionPrincingBox.button.label}</p>
+      <p>{button.label}</p>
+      <div>
+        <S.ButtonFullPrice>R${totalPrice}</S.ButtonFullPrice>
+        <S.ButtonDiscountPrice>
+          R${installments * priceInstallment}
+        </S.ButtonDiscountPrice>
+      </div>
     </Button>
   </S.Box>
 )

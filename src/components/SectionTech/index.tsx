@@ -3,21 +3,16 @@ import React from 'react'
 import Heading from 'components/Heading'
 import Container from 'components/Container'
 import * as S from './styles'
-import icons from './content'
 import { SectionTechProps } from 'types/api'
 import { getImageUrl } from 'utils/getImageUrl'
 
-type Props = {
-  SectionTecnologies: SectionTechProps
-}
-
-const SectionTech = ({ SectionTecnologies }: Props) => {
+const SectionTech = ({ title, tecnologies }: SectionTechProps) => {
   return (
     <S.Wrapper>
       <Container>
-        <Heading reverseColor>{SectionTecnologies.title}</Heading>
+        <Heading reverseColor>{title}</Heading>
         <S.IconsContainer>
-          {SectionTecnologies.tecnologies.map(({ title, icon }) => (
+          {tecnologies.map(({ title, icon }) => (
             <S.Icon key={title}>
               <S.Icons
                 src={getImageUrl(icon.data.attributes.url)}

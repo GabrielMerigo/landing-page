@@ -37,7 +37,7 @@ export type SectionAboutProps = {
   description: string
 }
 
-interface Tech {
+type Tech = {
   title: string
   icon: {
     data: {
@@ -54,7 +54,7 @@ export type SectionTechProps = {
   tecnologies: Tech[]
 }
 
-interface Concept {
+type Concept = {
   concept: string
 }
 
@@ -63,7 +63,7 @@ export type SectionConceptProps = {
   title: string
 }
 
-interface Module {
+type Module = {
   title: string
   subtitle: string
   description: string
@@ -90,12 +90,12 @@ export type SectionPrincingBoxProps = {
   }
 }
 
-interface Link {
+type Link = {
   url: string
   label: string
 }
 
-interface Author {
+type Author = {
   attributes: {
     name: string
     rule: string
@@ -119,7 +119,7 @@ export type AboutUsProps = {
   }
 }
 
-interface Interview {
+export type Review = {
   name: string
   description: string
   photo: {
@@ -134,7 +134,7 @@ interface Interview {
 
 export type SectionReviewProps = {
   title: string
-  reviews: Interview[]
+  reviews: Review[]
 }
 
 export type SectionFAQ = {

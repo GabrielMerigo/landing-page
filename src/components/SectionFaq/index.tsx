@@ -6,18 +6,14 @@ import Heading from 'components/Heading'
 import * as S from './styles'
 import { SectionFAQ } from 'types/api'
 
-type Props = {
-  FAQ: SectionFAQ
-}
-
-const SectionFaq = ({ FAQ }: Props) => (
+const SectionFaq = ({ questions }: SectionFAQ) => (
   <S.Wrapper>
     <S.Content>
       <Container>
         <Heading>FAQ</Heading>
 
         <S.Questions>
-          {FAQ.questions.map(({ question, answer }, index) => (
+          {questions.map(({ question, answer }, index) => (
             <S.Question key={index}>
               <Heading lineBottom>{question}</Heading>
               <div dangerouslySetInnerHTML={{ __html: answer }} />

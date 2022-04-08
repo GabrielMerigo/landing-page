@@ -34,16 +34,16 @@ const Index = ({
 }: LadingPageProps) => (
   <>
     <SectionHero logo={logo} SectionHeader={SectionHeader} />
-    <SectionAboutProject SectionProject={SectionProject} />
-    <SectionTech SectionTecnologies={SectionTecnologies}  />
-    <SectionConcepts SectionConception={SectionConception} />
-    <SectionModules Modules={Modules} />
-    <SectionAgenda Agenda={Agenda} />
-    <PricingBox SectionPrincingBox={SectionPrincingBox} />
-    <SectionAboutUs AboutUs={AboutUs} />
-    <SectionReviews SectionReview={SectionReview} />
-    <SectionFaq FAQ={SectionFAQ} />
-    <Footer FooterSection={footer} />
+    <SectionAboutProject {...SectionProject} />
+    <SectionTech {...SectionTecnologies}  />
+    <SectionConcepts {...SectionConception} />
+    <SectionModules {...Modules} />
+    <SectionAgenda {...Agenda} />
+    <PricingBox {...SectionPrincingBox} />
+    <SectionAboutUs {...AboutUs} />
+    <SectionReviews {...SectionReview} />
+    <SectionFaq {...SectionFAQ} />
+    <Footer {...footer} />
     <JsonSchema />
   </>
 );

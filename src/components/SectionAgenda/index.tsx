@@ -6,15 +6,11 @@ import Heading from 'components/Heading'
 import * as S from './styles'
 import { SectionAgendaProps } from 'types/api'
 
-type Props = {
-  Agenda: SectionAgendaProps
-}
-
-const SectionAgenda = ({ Agenda }: Props) => (
+const SectionAgenda = ({ title, description }: SectionAgendaProps) => (
   <Container id="agenda">
-    <Heading reverseColor>{Agenda.title}</Heading>
+    <Heading reverseColor>{title}</Heading>
     <S.Text>
-      {Agenda.description}
+      {description}
     </S.Text>
   </Container>
 )

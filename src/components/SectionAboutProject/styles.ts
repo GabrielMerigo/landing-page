@@ -27,23 +27,20 @@ export const Container = styled.div`
   `}
 `
 
-export const Image = styled.picture`
-  max-width: 100%;
+export const Image = styled.img`
+  display: block;
+  max-width: min(60rem, 100%);
+  margin: 0 auto;
 
-  img {
-    display: block;
-    max-width: min(60rem, 100%);
-    margin: 0 auto;
-
-    ${media.lessThan('medium')`
-      max-width: 100%;
-    `}
-  }
+  ${media.lessThan('medium')`
+    max-width: 100%;
+  `}
 `
 
 export const Text = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.medium};
+    color: black;
 
     p {
       color: ${theme.colors.texts};

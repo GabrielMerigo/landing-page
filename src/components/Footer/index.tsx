@@ -5,16 +5,10 @@ import Container from 'components/Container'
 import * as S from './styles'
 import { FooterProps } from 'types/api'
 
-type Props = {
-  FooterSection: FooterProps
-}
-
-const Footer = ({ FooterSection }: Props) => (
+const Footer = ({ description }: FooterProps) => (
   <S.Wrapper>
     <Container>
-      <p>
-        {FooterSection.description}
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: description }} />
     </Container>
   </S.Wrapper>
 )

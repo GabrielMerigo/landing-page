@@ -17,7 +17,7 @@ type socialLinks = {
   label: string
 }
 
-type Props = {
+type Review = {
   name: string
   role: string
   image: string
@@ -25,7 +25,7 @@ type Props = {
   description: string
 }
 
-const ProfileCard: React.FC<Props> = ({
+const ProfileCard: React.FC<Review> = ({
   name,
   role,
   image,
@@ -33,18 +33,7 @@ const ProfileCard: React.FC<Props> = ({
   description
 }) => (
   <S.Card key={name}>
-    <S.Image>
-      <source
-        srcSet={getImageUrl(image)}
-        type="image/webp"
-      />
-      <source srcSet={getImageUrl(image)} type="image/png" />
-      <img
-        src={getImageUrl(image)}
-        loading="lazy"
-        alt={name}
-      />
-    </S.Image>
+    <S.Image src={getImageUrl(image)} loading="lazy" alt={name} />
     <S.Name>{name}</S.Name>
     <S.Role>{role}</S.Role>
     <S.SocialLinks>
